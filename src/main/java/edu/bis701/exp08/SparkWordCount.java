@@ -1,0 +1,3 @@
+package edu.bis701.exp08;
+import org.apache.spark.SparkConf;import org.apache.spark.api.java.*;import scala.Tuple2;import java.util.Arrays;
+public class SparkWordCount{public static void main(String[]a){if(a.length!=1)throw new IllegalArgumentException("SparkWordCount <input-path>");SparkConf conf=new SparkConf().setAppName("BIS701 Spark WordCount");if(!conf.contains("spark.master"))conf.setMaster("local[*]");try(JavaSparkContext sc=new JavaSparkContext(conf)){sc.textFile(a[0]).flatMapToPair(line->Arrays.stream(line.toLowerCase().split("\\W+")).filter(w->!w.isEmpty()).map(w->new Tuple2<>(w,1)).iterator()).reduceByKey(Integer::sum).sortByKey().collect().forEach(x->System.out.println(x._1()+"\t"+x._2()));}}}

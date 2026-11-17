@@ -1,3 +1,0 @@
-Hadoop stores large files in HDFS.
-HDFS supports distributed storage and fault tolerance.
-MapReduce processes data in parallel.

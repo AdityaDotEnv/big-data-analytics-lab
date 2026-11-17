@@ -50,7 +50,7 @@ hadoop_env() {
 
 mongo_env() {
   export MONGODB_URI="${MONGODB_URI:-mongodb://127.0.0.1:27017}"
-  export LAB_DB_PREFIX="${LAB_DB_PREFIX:-bcs714d_lab}"
+  export LAB_DB_PREFIX="${LAB_DB_PREFIX:-bis701_lab}"
   if ! command -v mongosh >/dev/null 2>&1 || { [[ "$MONGODB_URI" == mongodb://127.0.0.1* || "$MONGODB_URI" == mongodb://localhost* ]] && ! command -v mongod >/dev/null 2>&1; }; then
     echo "MongoDB Shell and/or local MongoDB Server were not detected."
     if confirm "Install MongoDB Community Server and mongosh now?"; then

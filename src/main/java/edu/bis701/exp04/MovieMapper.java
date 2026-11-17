@@ -1,0 +1,3 @@
+package edu.bis701.exp04;
+import java.io.IOException;import org.apache.hadoop.io.*;import org.apache.hadoop.mapreduce.Mapper;
+public class MovieMapper extends Mapper<LongWritable,Text,Text,Text>{protected void map(LongWritable k,Text v,Context c)throws IOException,InterruptedException{String s=v.toString().trim();if(s.isEmpty()||s.toLowerCase().startsWith("userid"))return;String[]p=s.split("\\s*,\\s*");if(p.length<3)return;try{double r=Double.parseDouble(p[2]);if(r>=0&&r<=5)c.write(new Text(p[1]),new Text(Double.toString(r)));}catch(NumberFormatException e){System.err.println("Invalid rating row: "+s);}}}

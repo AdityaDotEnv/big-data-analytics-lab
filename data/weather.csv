@@ -1,0 +1,6 @@
+date,condition,temperature,humidity,wind,rain
+2025-08-20,Hot,38,40,12,0
+2025-08-21,Rainy,29,82,18,12
+2025-08-22,Cold,18,55,8,0
+2025-08-23,HeavyRain,25,91,25,35
+2025-08-24,Humid,31,88,10,2

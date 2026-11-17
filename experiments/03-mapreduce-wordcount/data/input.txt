@@ -1,3 +1,0 @@
-Big data analytics with Hadoop.
-Hadoop uses HDFS for distributed storage.
-MapReduce processes big data with map and reduce tasks.
